@@ -1,20 +1,21 @@
 b/*-----Flow in git
     floder in PC -> Staging area -> Commited
 */
-B1:
+------------- CREATE NEW FOLDER and UPDATE GITHUB --------------
+Step1:
 	git init -> initilize file .git
 	git config --global user.name 'name' -> setup name
 	git config --global user.email 'email' -> setup email
 	git status -> check status source git
-B2:
+Step2:
 	git add name -> move to staging area
 	git add . -> move to staging area all file
 	git restore --staged name -> to back floder in PC from staging area
 	git restore --staged . -> to back all file git floder in PC from staging area
-B3:
+Step3:
 	git commit -m "" -> conntent commit file
 	git log -> check history commit file, press Q to exit commit
-B4:
+Step4:
 	git remote add origin link -> connect to link online
 	git branch -M main -> branch 
 	git push -u origin main -> update to github
@@ -28,5 +29,11 @@ git merge name -> move brack to main
 -----
 git pull -> get data from GIT online
 
------
-git clone url -> download file from GITremote to GITlocal 
+------------- DOWNLOAD FILE FROM GITremote TO ANOTHER COMPUTER
+Step1: download file
+	git clone url -> download file from GITremote to GITlocal 
+Step2: Push file to GITremote from computer
+	git stauts
+	git push
+Step3: Update change from GITremote
+	git pull
