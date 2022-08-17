@@ -1,0 +1,32 @@
+b/*-----Flow in git
+    floder in PC -> Staging area -> Commited
+*/
+B1:
+	git init -> initilize file .git
+	git config --global user.name 'name' -> setup name
+	git config --global user.email 'email' -> setup email
+	git status -> check status source git
+B2:
+	git add name -> move to staging area
+	git add . -> move to staging area all file
+	git restore --staged name -> to back floder in PC from staging area
+	git restore --staged . -> to back all file git floder in PC from staging area
+B3:
+	git commit -m "" -> conntent commit file
+	git log -> check history commit file, press Q to exit commit
+B4:
+	git remote add origin link -> connect to link online
+	git branch -M main -> branch 
+	git push -u origin main -> update to github
+
+-----
+git branch -> check branchs have to
+git checkout -b name -> create new branch
+git checkout main -> come back to branch main
+git merge name -> move brack to main
+
+-----
+git pull -> get data from GIT online
+
+-----
+git clone url
