@@ -29,4 +29,4 @@ git merge name -> move brack to main
 git pull -> get data from GIT online
 
 -----
-git clone url
+git clone url -> download file from GITremote to GITlocal 
