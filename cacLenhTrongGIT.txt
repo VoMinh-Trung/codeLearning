@@ -1,3 +1,11 @@
+----------- CMD
+cd: move to
+cd \: back to
+diskName: move to disk
+del name: delete file
+
+
+
 b/*-----Flow in git
     floder in PC -> Staging area -> Commited
 */
