@@ -24,6 +24,9 @@
     <ClCompile Include="stack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="singleLinked.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="test1.txt">
