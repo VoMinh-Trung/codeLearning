@@ -1,6 +1,3 @@
-﻿  stack.cpp
-C:\Users\vomin\OneDrive\Desktop\CTDL-GT\CTDL-GT2\CTDL-GT2\stack.cpp(67,21): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\vomin\OneDrive\Desktop\CTDL-GT\CTDL-GT2\CTDL-GT2\stack.cpp(62,6): warning C4101: 'i': unreferenced local variable
-C:\Users\vomin\OneDrive\Desktop\CTDL-GT\CTDL-GT2\CTDL-GT2\stack.cpp(75,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
-C:\Users\vomin\OneDrive\Desktop\CTDL-GT\CTDL-GT2\CTDL-GT2\stack.cpp(43): warning C4715: 'Pop': not all control paths return a value
-  CTDL-GT2.vcxproj -> C:\Users\vomin\OneDrive\Desktop\CTDL-GT\CTDL-GT2\x64\Debug\CTDL-GT2.exe
+﻿  singleLinked.cpp
+D:\Cty TDC\VO MINH TRUNG\LEARNING\UpdateGIT\codeLearning\CTDL-GT2\CTDL-GT2\singleLinked.cpp(82,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  CTDL-GT2.vcxproj -> D:\Cty TDC\VO MINH TRUNG\LEARNING\UpdateGIT\codeLearning\CTDL-GT2\x64\Debug\CTDL-GT2.exe
