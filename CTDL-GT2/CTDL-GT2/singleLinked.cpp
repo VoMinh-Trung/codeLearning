@@ -1,10 +1,25 @@
-#include <stdio.h>
+/*
+* 1. struct node
+*		data
+*		pointer
+* 2. struct list
+*		pHead
+*		pTail
+* 3. initialize struction single linked list
+*		pHead = pTail = NULL
+* 4. initialize a node
+*		pointer
+* 5. add HEAD
+* 6. add TAIL
+*/
 
+
+#include <stdio.h>
 
 struct node
 {
-	int data;//data 
-	struct node* pNext;//pointer
+	int data;//a node's data 
+	struct node* pNext;//pointer linked nodes
 };
 typedef struct node NODE;//replay name "struct node" to only one name "NODE"
 
@@ -43,7 +58,7 @@ void addHEAD(LIST &l, NODE *p)
 {
 	if (l.pHead == NULL)
 	{
-		printf_s("Danh sach rong");
+		//printf_s("Danh sach rong");
 		l.pHead = l.pTail = p;//head node = tail node = p 
 	}
 	else
@@ -60,7 +75,7 @@ void addTAIL(LIST& l, NODE* p)
 {
 	if (l.pHead == NULL)
 	{
-		printf_s("Danh sach rong");
+		//printf_s("Danh sach rong");
 		l.pHead = l.pTail = p;//head node = tail node = p 
 	}
 	else
@@ -70,6 +85,7 @@ void addTAIL(LIST& l, NODE* p)
 	}
 }
 
+//export list
 void exportList(LIST l) 
 {
 	for (NODE* k = l.pHead; k != NULL; k = k->pNext)
@@ -77,6 +93,22 @@ void exportList(LIST l)
 		printf_s("%d  ", k->data);
 	}
 }
+
+//find max value
+int findMaxValue(LIST l)
+{
+	int max = l.pHead->data;//for HEADnode is max
+	//check max value from second node
+	for (NODE* k = l.pHead; k != NULL; k = k->pNext)
+	{
+		if (max < k->data)
+		{
+			max = k->data;
+		}
+	}
+	return max;
+}
+
 
 void main() 
 {
@@ -91,8 +123,10 @@ void main()
 		printf_s("\nNhap gia tri so nguyen: ");
 		scanf_s("%d", &x);
 		NODE* p = khoiTaoNODE(x);//init node integer
-		addHEAD(l, p);//add node p at head single linked list
+		addTAIL(l, p);//add node p at head single linked list
 	}
 	printf_s("---DANH SACH LIEN KET---\n");
 	exportList(l);
+	printf_s("\n---MAX VALUE---\n");
+	printf_s("\n%d", findMaxValue(l));
 }
