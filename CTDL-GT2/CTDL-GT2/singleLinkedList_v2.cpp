@@ -36,7 +36,7 @@ void addHEAD(LIST &l, NODE *p)
 {
 	if (l.pHead == NULL)
 	{
-		l.pHead = l.pTail = NULL;
+		l.pHead = l.pTail = p;
 	}
 	else
 	{
@@ -45,16 +45,18 @@ void addHEAD(LIST &l, NODE *p)
 	}
 }
 
-void addTAIL(LIST &l, NODE *p)
+//add TAILnode linked list
+void addTAIL(LIST& l, NODE* p)
 {
 	if (l.pHead == NULL)
 	{
-		l.pHead = l.pTail = NULL;
+		//printf_s("Danh sach rong");
+		l.pHead = l.pTail = p;//head node = tail node = p 
 	}
 	else
 	{
-		l.pTail->pNext = p;
-		l.pTail = p;
+		l.pTail->pNext = p;//take pTail's pointer linked NODEp
+		l.pTail = p;//update p is endNODE(pTail)
 	}
 }
 
@@ -67,17 +69,17 @@ void exportList(LIST l)
 	}
 }
 
-void MENU()
+void MENU(LIST &l)
 {
 	int option;
 	bool breakWhile = 1;
 	while (breakWhile)
 	{
 		printf_s("\n\n--------- MENU ---------");
-		printf_s("\n\n--------- 0.EXIT ---------");
-		printf_s("\n\n--------- 1.INPUT VALUE ---------");
-		printf_s("\n\n--------- 2.EPORT ---------");
-		printf_s("\n\n--------- END ---------");
+		printf_s("\n--------- 0.EXIT ---------");
+		printf_s("\n--------- 1.INPUT VALUE ---------");
+		printf_s("\n--------- 2.EXPORT ---------");
+		printf_s("\n--------- END ---------");
 
 		printf_s("\nInput your select: ");
 		scanf_s("%d", &option);
@@ -86,12 +88,17 @@ void MENU()
 		{
 			case 1:
 			{
-				printf_s("\nNhap gia tri so nguyen");
+				printf_s("\nNhap gia tri so nguyen: ");
+				int i;
+				scanf_s("%d", &i);
+				NODE *p = initNODE(i);
+				addTAIL(l, p);
 				break;
 			}
 			case 2:
 			{
-				printf_s("\nXuat mang lien ket");
+				printf_s("\nXuat mang lien ket: ");
+				exportList(l);
 				break;
 			}
 			case 0:
@@ -106,5 +113,7 @@ void MENU()
 
 void main() 
 {
-	MENU();
+	LIST l;
+	initLIST(l);
+	MENU(l);
 }
