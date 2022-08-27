@@ -45,12 +45,10 @@ void addHEAD(LIST &l, NODE *p)
 	}
 }
 
-//add TAILnode linked list
 void addTAIL(LIST& l, NODE* p)
 {
 	if (l.pHead == NULL)
 	{
-		//printf_s("Danh sach rong");
 		l.pHead = l.pTail = p;//head node = tail node = p 
 	}
 	else
@@ -69,6 +67,39 @@ void exportList(LIST l)
 	}
 }
 
+//add nodeP behind  nodeQ(nodeQ is node was in single linked list)
+void addNodeP_behindNodeQ(LIST &l, NODE *p)
+{
+	int x;
+	printf_s("Nhap gia tri node Q: ");
+	scanf_s("%d", &x);
+	NODE* q = initNODE(x);
+
+	//if the condition is satisfied -> list have only one node
+	//-> addTAIL
+	if(q->data == l.pHead->data && l.pHead->pNext == NULL)
+	{
+		addTAIL(l, p);
+	}
+	//dont only one node
+	else
+	{
+		//check start node to end node, cause find node Q
+		for (NODE* k = l.pHead; k != NULL; k = k->pNext)
+		{
+			if (q->data == k->data)
+			{
+				NODE* g = k->pNext;///g is intermediary node
+				//step 1: create linked between P to G <-> pointer node P connect to node behind Q
+				p->pNext = g;
+				//step 2: create linked between pointer Q to node P <-> 
+				k->pNext = p;
+			}
+		}
+	}
+
+}
+
 void MENU(LIST &l)
 {
 	int option;
@@ -77,8 +108,10 @@ void MENU(LIST &l)
 	{
 		printf_s("\n\n--------- MENU ---------");
 		printf_s("\n--------- 0.EXIT ---------");
-		printf_s("\n--------- 1.INPUT VALUE ---------");
-		printf_s("\n--------- 2.EXPORT ---------");
+		printf_s("\n--------- 1.ENTER HEAD VALUE ---------");
+		printf_s("\n--------- 2.ENTER TAIL VALUE ---------");
+		printf_s("\n--------- 3.ADD NODE P BEHIND Q ---------");
+		printf_s("\n--------- 10.EXPORT ---------");
 		printf_s("\n--------- END ---------");
 
 		printf_s("\nInput your select: ");
@@ -88,14 +121,35 @@ void MENU(LIST &l)
 		{
 			case 1:
 			{
-				printf_s("\nNhap gia tri so nguyen: ");
+				printf_s("\nEnter integer value node HEAD: ");
 				int i;
 				scanf_s("%d", &i);
 				NODE *p = initNODE(i);
-				addTAIL(l, p);
+				addHEAD(l, p);
 				break;
 			}
 			case 2:
+			{
+				printf_s("\nEnter integer value node TAIL: ");
+				int i;
+				scanf_s("%d", &i);
+				NODE* p = initNODE(i);
+				addTAIL(l, p);
+				break;
+			}
+			case 3:
+			{
+				printf_s("\nEnter integer value node P: ");
+				int i;
+				scanf_s("%d", &i);
+				NODE* p = initNODE(i);
+				addNodeP_behindNodeQ(l, p);
+				break;
+			}
+
+
+
+			case 10:
 			{
 				printf_s("\nXuat mang lien ket: ");
 				exportList(l);
